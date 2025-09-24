@@ -1,5 +1,5 @@
-import React from "react";
 import AcessibilidadeButton from "./components/AcessibilidadeButton";
+import AcessibilidadeSwitch from "./components/AcessibilidadeSwitch";
 import "./App.css";
 
 function App() {
@@ -34,6 +34,9 @@ function App() {
           alt="Imagem ilustrativa de acessibilidade digital"
         />
         <AcessibilidadeButton label="Clique aqui" onClick={handleClick} />
+
+        {/* Nova implementação */}
+        <AcessibilidadeSwitch label="Ativar modo de alto contraste" />
       </main>
 
       <footer id="rodape" role="contentinfo">
