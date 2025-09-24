@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import AcessibilidadeButton from "./components/AcessibilidadeButton";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const handleClick = () => {
+    alert("Botão de acessibilidade clicado!");
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div className="container">
+      <header>
+        <h1 tabIndex={0}>Projeto de Acessibilidade</h1>
+        <nav aria-label="Menu Principal">
+          <ul>
+            <li>
+              <a href="#conteudo">Ir para o conteúdo</a>
+            </li>
+            <li>
+              <a href="#rodape">Ir para o rodapé</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="conteudo">
+        <h2>Recursos de Acessibilidade</h2>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          Este projeto demonstra boas práticas de acessibilidade em aplicações
+          web, utilizando React com Vite.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+        <img
+          src="https://via.placeholder.com/300x150"
+          alt="Imagem ilustrativa de acessibilidade digital"
+        />
+        <AcessibilidadeButton label="Clique aqui" onClick={handleClick} />
+      </main>
+
+      <footer id="rodape" role="contentinfo">
+        <p>© 2025 Projeto de Acessibilidade.</p>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
